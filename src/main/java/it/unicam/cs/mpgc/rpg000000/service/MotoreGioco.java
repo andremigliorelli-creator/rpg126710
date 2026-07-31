@@ -8,6 +8,8 @@ import it.unicam.cs.mpgc.rpg000000.model.combattimento.EsitoCombattimento;
 import it.unicam.cs.mpgc.rpg000000.model.mondo.Direzione;
 import it.unicam.cs.mpgc.rpg000000.model.mondo.Mappa;
 import it.unicam.cs.mpgc.rpg000000.model.mondo.Stanza;
+import it.unicam.cs.mpgc.rpg000000.model.oggetto.Arma;
+import it.unicam.cs.mpgc.rpg000000.model.oggetto.Armatura;
 import it.unicam.cs.mpgc.rpg000000.model.oggetto.Oggetto;
 import it.unicam.cs.mpgc.rpg000000.model.personaggio.Eroe;
 import it.unicam.cs.mpgc.rpg000000.model.personaggio.Nemico;
@@ -73,6 +75,16 @@ public class MotoreGioco {
     public void iniziaPartita() {
         notifica(TipoEvento.PARTITA_INIZIATA,
                 eroe.getNome() + " il " + eroe.getNomeClasse() + " entra nel dungeon.");
+        entraNellaStanza(stanzaCorrente);
+    }
+
+    /**
+     * Riprende una partita ricostruita da un salvataggio, rientrando nella
+     * stanza in cui l'eroe era stato lasciato.
+     */
+    public void riprendiPartita() {
+        notifica(TipoEvento.PARTITA_CARICATA,
+                "Partita ripresa: " + eroe.riepilogoStato() + ".");
         entraNellaStanza(stanzaCorrente);
     }
 
@@ -255,7 +267,37 @@ public class MotoreGioco {
         for (Oggetto tesoro : stanzaCorrente.raccogliTesori()) {
             eroe.raccogli(tesoro);
             notifica(TipoEvento.TESORO_RACCOLTO, "Raccogli " + tesoro.riepilogo() + ".");
+            equipaggiaSeMigliore(tesoro);
         }
+    }
+
+    /**
+     * Indossa automaticamente un oggetto appena raccolto se e' migliore di
+     * quello attualmente equipaggiato.
+     *
+     * <p>E' una regola di gioco, non una scelta di interfaccia: per questo vive
+     * nel motore e non nella finestra. Evita all'utente di dover ricordare di
+     * equipaggiare ogni ritrovamento.</p>
+     */
+    private void equipaggiaSeMigliore(Oggetto oggetto) {
+        if (oggetto instanceof Arma arma && armaMigliore(arma) && eroe.equipaggia(arma)) {
+            notifica(TipoEvento.AZIONE_ESEGUITA, "Impugni " + arma.riepilogo() + ".");
+        } else if (oggetto instanceof Armatura armatura && armaturaMigliore(armatura)
+                && eroe.equipaggia(armatura)) {
+            notifica(TipoEvento.AZIONE_ESEGUITA, "Indossi " + armatura.riepilogo() + ".");
+        }
+    }
+
+    private boolean armaMigliore(Arma candidata) {
+        return eroe.getEquipaggiamento().getArma()
+                .map(attuale -> candidata.getBonusAttacco() > attuale.getBonusAttacco())
+                .orElse(true);
+    }
+
+    private boolean armaturaMigliore(Armatura candidata) {
+        return eroe.getEquipaggiamento().getArmatura()
+                .map(attuale -> candidata.getBonusDifesa() > attuale.getBonusDifesa())
+                .orElse(true);
     }
 
     private void verificaUscitaDungeon() {

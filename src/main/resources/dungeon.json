@@ -1,0 +1,95 @@
+{
+  "stanzaIniziale": "ingresso",
+
+  "oggetti": [
+    { "nome": "Spada corta",      "descrizione": "Una lama leggera, adatta agli spazi stretti.",        "valore": 20,  "categoria": "ARMA",     "potenza": 3 },
+    { "nome": "Spada lunga",      "descrizione": "Acciaio ben temprato, pesante ma affidabile.",        "valore": 60,  "categoria": "ARMA",     "potenza": 5 },
+    { "nome": "Bastone runico",   "descrizione": "Il legno e' percorso da incisioni ancora calde.",     "valore": 45,  "categoria": "ARMA",     "potenza": 4 },
+    { "nome": "Scudo di legno",   "descrizione": "Ammaccato, ma ha gia' salvato qualcuno.",             "valore": 15,  "categoria": "ARMATURA", "potenza": 2 },
+    { "nome": "Cotta di maglia",  "descrizione": "Anelli di ferro fitti, appesantiscono il passo.",     "valore": 50,  "categoria": "ARMATURA", "potenza": 3 },
+    { "nome": "Pozione minore",   "descrizione": "Un sorso amaro che richiude le ferite piu' piccole.", "valore": 10,  "categoria": "POZIONE",  "potenza": 10 },
+    { "nome": "Pozione maggiore", "descrizione": "Denso liquido rosso dal profumo di ferro.",           "valore": 30,  "categoria": "POZIONE",  "potenza": 25 }
+  ],
+
+  "nemici": [
+    { "id": "goblin",            "nome": "Goblin",             "attacco": 4, "difesa": 1, "puntiVita": 14, "strategia": "CAUTA",      "esperienza": 40,  "bottino": "Pozione minore" },
+    { "id": "scheletro",         "nome": "Scheletro",          "attacco": 5, "difesa": 3, "puntiVita": 18, "strategia": "AGGRESSIVA", "esperienza": 60,  "bottino": "Scudo di legno" },
+    { "id": "capo_goblin",       "nome": "Capo goblin",        "attacco": 6, "difesa": 2, "puntiVita": 22, "strategia": "CAUTA",      "esperienza": 80,  "bottino": "Spada corta" },
+    { "id": "signore_ossa",      "nome": "Signore delle Ossa", "attacco": 9, "difesa": 4, "puntiVita": 40, "strategia": "AGGRESSIVA", "esperienza": 200, "bottino": "Pozione maggiore" }
+  ],
+
+  "stanze": [
+    {
+      "id": "ingresso",
+      "nome": "Ingresso del dungeon",
+      "descrizione": "Una scala di pietra scende nel buio. Alle tue spalle il portone si e' gia' chiuso.",
+      "uscitaDelDungeon": false,
+      "uscite": { "NORD": "corridoio" },
+      "nemici": [],
+      "tesori": ["Spada corta", "Pozione minore"]
+    },
+    {
+      "id": "corridoio",
+      "nome": "Corridoio umido",
+      "descrizione": "L'acqua gocciola dalle volte. Qualcosa si muove nell'ombra piu' avanti.",
+      "uscitaDelDungeon": false,
+      "uscite": { "NORD": "sala_guardie", "EST": "cripta" },
+      "nemici": ["goblin"],
+      "tesori": []
+    },
+    {
+      "id": "cripta",
+      "nome": "Cripta dimenticata",
+      "descrizione": "Loculi aperti lungo le pareti. L'aria sa di polvere antica.",
+      "uscitaDelDungeon": false,
+      "uscite": {},
+      "nemici": ["scheletro"],
+      "tesori": ["Cotta di maglia"]
+    },
+    {
+      "id": "sala_guardie",
+      "nome": "Sala delle guardie",
+      "descrizione": "Tavoli rovesciati e un fuoco ancora acceso: qualcuno era qui poco fa.",
+      "uscitaDelDungeon": false,
+      "uscite": { "NORD": "armeria", "OVEST": "laboratorio" },
+      "nemici": ["capo_goblin"],
+      "tesori": []
+    },
+    {
+      "id": "laboratorio",
+      "nome": "Laboratorio alchemico",
+      "descrizione": "Alambicchi rotti e appunti illeggibili. Su un ripiano qualcosa e' sopravvissuto.",
+      "uscitaDelDungeon": false,
+      "uscite": {},
+      "nemici": [],
+      "tesori": ["Pozione maggiore", "Bastone runico"]
+    },
+    {
+      "id": "armeria",
+      "nome": "Armeria saccheggiata",
+      "descrizione": "Rastrelliere vuote, tranne una. Fra le ossa a terra qualcosa si rialza.",
+      "uscitaDelDungeon": false,
+      "uscite": { "NORD": "sala_trono" },
+      "nemici": ["scheletro"],
+      "tesori": ["Spada lunga"]
+    },
+    {
+      "id": "sala_trono",
+      "nome": "Sala del trono",
+      "descrizione": "Su un trono di ossa siede una figura incoronata che apre lentamente le orbite vuote.",
+      "uscitaDelDungeon": false,
+      "uscite": { "NORD": "uscita" },
+      "nemici": ["signore_ossa"],
+      "tesori": []
+    },
+    {
+      "id": "uscita",
+      "nome": "Uscita del dungeon",
+      "descrizione": "Una fessura nella roccia lascia passare la luce del giorno. Ce l'hai fatta.",
+      "uscitaDelDungeon": true,
+      "uscite": {},
+      "nemici": [],
+      "tesori": []
+    }
+  ]
+}
