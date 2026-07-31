@@ -40,17 +40,6 @@ public final class Statistiche {
         this.puntiVitaMassimi = puntiVitaMassimi;
     }
 
-    /**
-     * Restituisce statistiche con tutti i valori a zero, tranne i punti vita
-     * massimi fissati a uno perche' devono restare positivi. Utile come
-     * elemento neutro quando si sommano piu' bonus.
-     *
-     * @return statistiche prive di bonus
-     */
-    public static Statistiche nessunBonus() {
-        return new Statistiche(0, 0, 1);
-    }
-
     public int getAttacco() {
         return attacco;
     }
@@ -64,24 +53,23 @@ public final class Statistiche {
     }
 
     /**
-     * Combina queste statistiche con altre, sommando attacco e difesa e
-     * lasciando invariati i punti vita massimi di questa istanza.
+     * Applica un bonus di equipaggiamento a queste statistiche.
      *
-     * <p>I punti vita massimi non vengono sommati perche' rappresentano una
-     * caratteristica del personaggio, non un bonus cumulabile: un'arma
+     * <p>I punti vita massimi restano invariati perche' rappresentano una
+     * caratteristica del personaggio e non un valore cumulabile: un'arma
      * aumenta l'attacco, non la resistenza fisica di chi la impugna.</p>
      *
-     * @param bonus statistiche da sommare, non nulle
-     * @return una nuova istanza con i valori combinati
+     * @param bonus contributo da applicare, non nullo
+     * @return una nuova istanza con i valori aggiornati
      * @throws IllegalArgumentException se il bonus e' nullo
      */
-    public Statistiche piu(Statistiche bonus) {
+    public Statistiche piu(Bonus bonus) {
         if (bonus == null) {
-            throw new IllegalArgumentException("Il bonus da sommare non puo' essere nullo");
+            throw new IllegalArgumentException("Il bonus da applicare non puo' essere nullo");
         }
         return new Statistiche(
-                this.attacco + bonus.attacco,
-                this.difesa + bonus.difesa,
+                this.attacco + bonus.getAttacco(),
+                this.difesa + bonus.getDifesa(),
                 this.puntiVitaMassimi
         );
     }

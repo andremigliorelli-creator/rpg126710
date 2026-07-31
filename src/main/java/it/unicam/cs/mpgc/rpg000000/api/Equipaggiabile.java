@@ -1,6 +1,6 @@
 package it.unicam.cs.mpgc.rpg000000.api;
 
-import it.unicam.cs.mpgc.rpg000000.model.personaggio.Statistiche;
+import it.unicam.cs.mpgc.rpg000000.model.personaggio.Bonus;
 
 /**
  * Oggetto che, una volta indossato o impugnato, modifica in modo permanente le
@@ -22,7 +22,7 @@ public interface Equipaggiabile {
      * Restituisce il contributo che l'oggetto offre alle statistiche di chi lo
      * equipaggia.
      *
-     * @return le statistiche bonus, mai {@code null}
+     * @return il bonus fornito, mai {@code null}
      */
-    Statistiche getBonus();
+    Bonus getBonus();
 }
