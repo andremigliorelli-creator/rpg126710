@@ -32,6 +32,9 @@ dependencies {
 
 application {
     mainClass = "it.unicam.cs.mpgc.rpg000000.Main"
+    // JavaFX carica librerie native: senza questa opzione la JVM stampa un
+    // avviso a ogni avvio.
+    applicationDefaultJvmArgs = listOf("--enable-native-access=javafx.graphics")
 }
 
 tasks.test {
