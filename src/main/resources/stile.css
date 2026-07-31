@@ -1,0 +1,180 @@
+/*
+ * Foglio di stile dell'applicazione.
+ *
+ * Tenere l'aspetto grafico qui, invece che disseminato di chiamate setStyle
+ * nel codice Java, permette di cambiare colori e spaziature senza ricompilare
+ * e mantiene le classi della vista concentrate sulla struttura.
+ */
+
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #1d1f24;
+}
+
+.label {
+    -fx-text-fill: #d9dbe0;
+}
+
+/* ---------- Schermata iniziale ---------- */
+
+.schermata-iniziale {
+    -fx-background-color: linear-gradient(to bottom, #23262d, #14161a);
+    -fx-padding: 40;
+}
+
+.titolo {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8c37a;
+}
+
+.sottotitolo {
+    -fx-font-size: 14px;
+    -fx-text-fill: #9aa0ab;
+    -fx-padding: 0 0 16 0;
+}
+
+/* ---------- Schermata di gioco ---------- */
+
+.intestazione {
+    -fx-background-color: #2a2e36;
+    -fx-border-color: transparent transparent #3a3f4a transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.titolo-stanza {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8c37a;
+}
+
+.descrizione-stanza {
+    -fx-text-fill: #a8aeb9;
+}
+
+.pannello-eroe,
+.pannello-nemico {
+    -fx-background-color: #23262d;
+}
+
+.titolo-pannello {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8c37a;
+}
+
+.separatore {
+    -fx-text-fill: #7c8391;
+    -fx-font-size: 11px;
+    -fx-padding: 8 0 0 0;
+}
+
+.barra-vita {
+    -fx-accent: #b4453c;
+}
+
+.comandi {
+    -fx-background-color: #2a2e36;
+    -fx-border-color: #3a3f4a transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.button {
+    -fx-background-color: #39404c;
+    -fx-text-fill: #e6e8ec;
+    -fx-background-radius: 4;
+    -fx-padding: 7 14 7 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #4a5361;
+}
+
+.button:disabled {
+    -fx-opacity: 0.45;
+}
+
+.bottone-principale {
+    -fx-background-color: #8a6d3b;
+    -fx-font-weight: bold;
+}
+
+.bottone-principale:hover {
+    -fx-background-color: #a1804a;
+}
+
+.text-field,
+.combo-box {
+    -fx-background-color: #2f343d;
+    -fx-text-fill: #e6e8ec;
+    -fx-prompt-text-fill: #767d89;
+}
+
+/* ---------- Diario degli eventi ---------- */
+
+.diario {
+    -fx-background-color: #191b20;
+    -fx-control-inner-background: #191b20;
+    -fx-border-color: #3a3f4a;
+    -fx-border-radius: 4;
+}
+
+.diario .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c3c8d1;
+    -fx-padding: 4 8 4 8;
+}
+
+.evento-partita_iniziata,
+.evento-partita_caricata {
+    -fx-text-fill: #8fb3d9;
+    -fx-font-style: italic;
+}
+
+.evento-stanza_cambiata {
+    -fx-text-fill: #e8c37a;
+    -fx-font-weight: bold;
+}
+
+.evento-mossa_non_valida {
+    -fx-text-fill: #9aa0ab;
+    -fx-font-style: italic;
+}
+
+.evento-combattimento_iniziato,
+.evento-combattimento_terminato {
+    -fx-text-fill: #d98a5b;
+    -fx-font-weight: bold;
+}
+
+.evento-tesoro_raccolto {
+    -fx-text-fill: #7fbf8a;
+}
+
+.evento-livello_aumentato {
+    -fx-text-fill: #d9c05b;
+    -fx-font-weight: bold;
+}
+
+.evento-partita_vinta {
+    -fx-text-fill: #7fd98a;
+    -fx-font-weight: bold;
+}
+
+.evento-partita_persa {
+    -fx-text-fill: #d95b5b;
+    -fx-font-weight: bold;
+}
+
+.evento-partita_salvata {
+    -fx-text-fill: #8fb3d9;
+}
+
+.esito-partita {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8c37a;
+    -fx-padding: 0 12 0 0;
+}
