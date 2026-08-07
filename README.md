@@ -72,7 +72,7 @@ partita non comprende lo stato di uno scontro in corso.
 ## 🧱 Struttura del progetto
 
 ```
-src/main/java/it/unicam/cs/mpgc/rpg000000/
+src/main/java/it/unicam/cs/mpgc/rpg126710/
 ├── api/            contratti (interfacce) su cui poggia tutto il sistema
 ├── model/          concetti del dominio
 │   ├── personaggio/  eroi, nemici, statistiche
