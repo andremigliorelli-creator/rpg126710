@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg126710.ui;
 
+import it.unicam.cs.mpgc.rpg126710.service.FabbricaEroi;
 import it.unicam.cs.mpgc.rpg126710.service.GestorePartita;
 import it.unicam.cs.mpgc.rpg126710.service.MotoreGioco;
 import javafx.geometry.Pos;
@@ -66,8 +67,8 @@ public class SchermataIniziale {
         campoNome.setPromptText("Nome del personaggio");
         campoNome.setMaxWidth(260);
 
-        selettoreClasse.getItems().addAll(new it.unicam.cs.mpgc.rpg126710.service.FabbricaEroi().classiDisponibili());
-        selettoreClasse.getSelectionModel().selectFirst();
+        selettoreClasse.getItems().addAll(new FabbricaEroi().classiDisponibili());
+        selettoreClasse.setPromptText("Scegli una classe");
         selettoreClasse.setMaxWidth(260);
 
         Button bottoneNuova = new Button("Nuova partita");
@@ -93,8 +94,13 @@ public class SchermataIniziale {
             mostraAvviso("Scegli un nome per il tuo personaggio prima di iniziare.");
             return;
         }
+        String classe = selettoreClasse.getValue();
+        if (classe == null) {
+            mostraAvviso("Scegli la classe del tuo personaggio prima di iniziare.");
+            return;
+        }
         try {
-            MotoreGioco motore = gestorePartita.nuovaPartita(nome, selettoreClasse.getValue());
+            MotoreGioco motore = gestorePartita.nuovaPartita(nome, classe);
             avvioPartita.avvia(motore, false);
         } catch (RuntimeException errore) {
             mostraAvviso("Impossibile iniziare la partita: " + errore.getMessage());

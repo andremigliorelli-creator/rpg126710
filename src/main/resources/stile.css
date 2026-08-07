@@ -112,6 +112,38 @@
     -fx-prompt-text-fill: #767d89;
 }
 
+/*
+ * Il valore scelto in una ComboBox non e' un semplice testo ma una cella:
+ * senza queste regole eredita il colore chiaro predefinito e sparisce sul
+ * fondo scuro del controllo. Le due regole tengono quindi leggibile sia la
+ * classe selezionata sia il testo di invito quando non e' stato scelto nulla.
+ */
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e6e8ec;
+    -fx-padding: 4 8 4 8;
+}
+
+.combo-box .list-cell:empty {
+    -fx-text-fill: #767d89;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2f343d;
+    -fx-border-color: #3a3f4a;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #2f343d;
+    -fx-text-fill: #e6e8ec;
+}
+
+.combo-box-popup .list-view .list-cell:hover,
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: #8a6d3b;
+    -fx-text-fill: #ffffff;
+}
+
 /* ---------- Diario degli eventi ---------- */
 
 .diario {
