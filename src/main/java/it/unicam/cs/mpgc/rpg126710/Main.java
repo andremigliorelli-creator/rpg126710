@@ -6,11 +6,10 @@ import javafx.application.Application;
 /**
  * Punto di ingresso dell'applicazione.
  *
- * <p>La classe non estende {@link Application}: e' un lanciatore separato, la
- * soluzione consigliata per avviare un'applicazione JavaFX quando le librerie
- * si trovano sul classpath. Tenere distinto l'avvio dalla classe grafica rende
- * inoltre evidente che il punto di ingresso ha una sola responsabilita': far
- * partire il programma.</p>
+ * <p>La classe non estende {@link Application}: e' un lanciatore separato.
+ * Ora che il progetto e' un modulo JPMS la separazione non e' piu' obbligatoria,
+ * ma resta preferibile perche' tiene distinta la responsabilita' di far partire
+ * il programma da quella di costruirne l'interfaccia.</p>
  */
 public final class Main {
 
