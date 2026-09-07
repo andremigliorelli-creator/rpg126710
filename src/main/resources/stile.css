@@ -26,7 +26,7 @@
 .titolo {
     -fx-font-size: 34px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e8c37a;
+    -fx-text-fill: #b5793f;
 }
 
 .sottotitolo {
@@ -97,12 +97,12 @@
 }
 
 .bottone-principale {
-    -fx-background-color: #8a6d3b;
+    -fx-background-color: #6b4423;
     -fx-font-weight: bold;
 }
 
 .bottone-principale:hover {
-    -fx-background-color: #a1804a;
+    -fx-background-color: #82552e;
 }
 
 .bottone-direzione {
