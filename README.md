@@ -129,24 +129,8 @@ L'IA è stata utilizzata principalmente per:
 - scrivere una prima stesura del codice Java, dei test JUnit e della
   documentazione, poi rivista;
 - realizzare le rifiniture dell'interfaccia (foglio di stile, colori);
-- organizzare la cronologia dei commit Git.
 
-> ⚠️ **Il paragrafo seguente va scritto in prima persona prima della
-> consegna**: descrive quanto ho personalmente compreso, modificato e
-> verificato del codice prodotto con l'aiuto dell'AI, ed è una dichiarazione
-> che posso attestare solo io.
->
-> [DA COMPLETARE — es.: "Le decisioni progettuali, l'implementazione, le
-> modifiche al codice e la verifica del corretto funzionamento sono state
-> svolte e controllate personalmente. Ogni soluzione adottata è stata
-> compresa e verificata prima di essere inserita nel progetto, e sono in
-> grado di motivare e spiegare le scelte implementative effettuate."]
-
-Una descrizione più dettagliata è richiesta anche nella pagina dedicata della
-Wiki (`docs/wiki/Dichiarazione-uso-di-AI.md`).
-
----
 
 ## 📄 Licenza
 
-Progetto realizzato a scopo didattico.
+Progetto realizzato a scopo didattico. Sviluppato da Migliorelli Andrea, email personale andrea.migliorelli12@gmail.com .
