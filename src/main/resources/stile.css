@@ -105,6 +105,15 @@
     -fx-background-color: #a1804a;
 }
 
+.bottone-direzione {
+    -fx-background-color: #3f5b78;
+    -fx-text-fill: #e6e8ec;
+}
+
+.bottone-direzione:hover {
+    -fx-background-color: #4f6f8f;
+}
+
 .text-field,
 .combo-box {
     -fx-background-color: #2f343d;

@@ -223,6 +223,7 @@ public class SchermataGioco implements OsservatoreGioco {
     private void mostraComandiEsplorazione() {
         for (Direzione direzione : motore.direzioniDisponibili()) {
             Button bottone = new Button("Vai a " + direzione.getEtichetta());
+            bottone.getStyleClass().add("bottone-direzione");
             bottone.setOnAction(evento -> muovi(direzione));
             pannelloComandi.getChildren().add(bottone);
         }
