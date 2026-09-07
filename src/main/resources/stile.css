@@ -26,7 +26,7 @@
 .titolo {
     -fx-font-size: 34px;
     -fx-font-weight: bold;
-    -fx-text-fill: #b5793f;
+    -fx-text-fill: #ffd400;
 }
 
 .sottotitolo {
@@ -46,7 +46,7 @@
 .titolo-stanza {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e8c37a;
+    -fx-text-fill: #ffd400;
 }
 
 .descrizione-stanza {
@@ -61,7 +61,7 @@
 .titolo-pannello {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e8c37a;
+    -fx-text-fill: #ffd400;
 }
 
 .separatore {
@@ -97,21 +97,22 @@
 }
 
 .bottone-principale {
-    -fx-background-color: #6b4423;
+    -fx-background-color: #ffd400;
+    -fx-text-fill: #1d1f24;
     -fx-font-weight: bold;
 }
 
 .bottone-principale:hover {
-    -fx-background-color: #82552e;
+    -fx-background-color: #ffdf40;
 }
 
 .bottone-direzione {
-    -fx-background-color: #3f5b78;
-    -fx-text-fill: #e6e8ec;
+    -fx-background-color: #1e9bf0;
+    -fx-text-fill: #ffffff;
 }
 
 .bottone-direzione:hover {
-    -fx-background-color: #4f6f8f;
+    -fx-background-color: #43aef5;
 }
 
 .text-field,
@@ -175,7 +176,7 @@
 }
 
 .evento-stanza_cambiata {
-    -fx-text-fill: #e8c37a;
+    -fx-text-fill: #ffd400;
     -fx-font-weight: bold;
 }
 
@@ -216,6 +217,6 @@
 .esito-partita {
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e8c37a;
+    -fx-text-fill: #ffd400;
     -fx-padding: 0 12 0 0;
 }
